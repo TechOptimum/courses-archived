@@ -9,9 +9,12 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  transition:200ms;
+  
 }
 a:hover {
-  text-decoration: underline;
+
+  color:rgb(95, 95, 202);
 }
 img {
   border-radius: 10px;
