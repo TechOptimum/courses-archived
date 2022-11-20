@@ -13,4 +13,28 @@ a {
 
 * {
   box-sizing: border-box;
+  background-color:black;
+  color:#A7B2FF
+}
+
+.previous-button {
+  background-color: #A7B2FF;
+  color: black;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  text-decoration: none;
+  border:none;
+  cursor:pointer;
+  transition:300ms;
+}
+.previous-button:hover {
+  color: #A7B2FF;
+  background-color: rgb(3, 36, 46);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  text-decoration: none;
+  border:none;
+  cursor:pointer;
 }
