@@ -32,6 +32,7 @@ img {
   border:none;
   cursor:pointer;
   transition:300ms;
+  margin-bottom:5rem;
 }
 .previous-button:hover {
   border-radius: 5px;
