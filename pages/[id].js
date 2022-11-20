@@ -21,6 +21,7 @@ export const Text = ({ text }) => {
     return (
         
       <span
+      key={value.toString}
         className={[
           bold ? styles.bold : "",
           code ? styles.code : "",
