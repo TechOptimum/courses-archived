@@ -10,6 +10,12 @@ a {
   color: inherit;
   text-decoration: none;
 }
+a:hover {
+  text-decoration: underline;
+}
+img {
+  border-radius: 10px;
+}
 
 * {
   box-sizing: border-box;
@@ -33,4 +39,5 @@ a {
   text-decoration: none;
   border:none;
   cursor:pointer;
+  opacity: .7;
 }
