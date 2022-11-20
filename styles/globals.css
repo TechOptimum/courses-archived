@@ -29,16 +29,20 @@ img {
   border-radius: 5px;
   padding: 10px;
   text-decoration: none;
-  border:none;
+  border: 2px solid transparent;
   cursor:pointer;
   transition:300ms;
   margin-bottom:5rem;
+  margin-top: 2rem;
 }
 .previous-button:hover {
   border-radius: 5px;
   padding: 10px 15px 10px 15px;
   text-decoration: none;
-  border:none;
   cursor:pointer;
   opacity: .7;
+}
+.previous-button:active {
+  opacity: .9;
+  border: 2px solid rgb(243, 233, 233);
 }
