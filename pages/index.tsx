@@ -41,7 +41,7 @@ const Home: NextPage = () => {
           <p className="report-bugs-home">
             {" "}
             Report course errors to our{" "}
-            <a target={"_blank"} href="https://discord.gg/w7cymgdRBH">
+            <a rel="noreferrer"target={"_blank"} href="https://discord.gg/w7cymgdRBH">
               Discord Server
             </a>
           </p>
