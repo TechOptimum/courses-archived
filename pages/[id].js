@@ -173,6 +173,8 @@ export default function Post({ page, blocks }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
     <div className="page-cont">
+      <br/>
+      <br/>
       <article className={styles.container}>
         <h1 className={styles.name}>
           <Text text={page.properties.Name.title} />
@@ -187,7 +189,7 @@ export default function Post({ page, blocks }) {
             ← Back 
             </button>
            
-            <p className="report-bugs"> Report course errors to our <a>Discord Server</a></p>
+            <p className="report-bugs"> Report course errors to our <a target={"_blank"} href="https://discord.gg/w7cymgdRBH">Discord Server</a></p>
             </div>
        
         </section>
