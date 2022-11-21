@@ -13,6 +13,10 @@ a {
   transition:200ms;
   
 }
+hr {
+  border: .3px solid #6877ea !important;
+  border-radius: 10px;
+}
 a:hover {
 
   color:rgb(95, 95, 202);
