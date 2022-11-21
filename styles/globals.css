@@ -6,6 +6,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+
 a {
   color: inherit;
   text-decoration: none;
@@ -35,7 +36,7 @@ img {
   border: 2px solid transparent;
   cursor:pointer;
   transition:300ms;
-  margin-bottom:5rem;
+  margin-bottom:2rem;
   margin-top: 2rem;
 }
 .previous-button:hover {
@@ -48,4 +49,18 @@ img {
 .previous-button:active {
   opacity: .9;
   border: 2px solid rgb(243, 233, 233);
+}
+blockquote {
+  background-color: rgb(33, 22, 58);
+  border-left: 3px solid blue;
+  padding-left: 1rem;
+  margin-left: 0rem;
+}
+.flexbox {
+  display:flex;
+}
+.report-bugs {
+  margin-top: 38px;
+  margin-left: 30px;
+  float:right;
 }
