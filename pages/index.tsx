@@ -37,9 +37,13 @@ const Home: NextPage = () => {
             >
               <h2>Intro to Web Dev. &rarr;</h2>
             </a>
+           
           </div>
+          
           <p className="report-bugs-home">
-            {" "}
+            Return to our <a href="https://techoptimum.org">Main Website</a>
+            {" "}{" "} {" "}
+            <br/><br/>
             Report course errors to our{" "}
             <a rel="noreferrer"target={"_blank"} href="https://discord.gg/w7cymgdRBH">
               Discord Server

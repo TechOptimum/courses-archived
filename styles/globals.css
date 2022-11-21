@@ -72,4 +72,6 @@ blockquote {
 .report-bugs-home {
   bottom:5px;
   position:absolute;
+  text-align: center;
+
 }
