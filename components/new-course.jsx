@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { BsArrowDownRightCircle } from 'react-icons/bs';
-import {TbExternalLink } from 'react-icons/Tb';
+import {TbExternalLink } from 'react-icons/tb';
 export default function Course({ homeid, bannerurl, alt, title, description }) {
   return (
     <>
