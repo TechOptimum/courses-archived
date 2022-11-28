@@ -37,7 +37,7 @@ const Home: NextPage = () => {
        
 
           <Course
-            homeid="5b245c12-e448-43ff-8183-373c37db2a62"
+            homeid="http://localhost:3000/32778a40-8f63-4dbc-a6e8-a3f8b6d79e11"
             description="Learn the basics of Python and learn how to use datasets and variables."
             title={"Intro to Python."}
             alt={"Python bingbong"}
