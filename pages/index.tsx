@@ -34,8 +34,22 @@ const Home: NextPage = () => {
           ></Course>
           
         </div>
+        <br></br>
+        <br></br>
 
+        <div className={styles.grid}>
+          <Course
+            homeid="5b245c12-e448-43ff-8183-373c37db2a62"
+            description="Learn the basics of Python and how to use a handful of datasets, datatypes and variables etc.."
+            title={"Intro to Python."}
+            alt={"Python bingbong"}
+            bannerurl={
+              "/python.jpg"
+            }
+          ></Course>
+        </div>
         <p className="report-bugs-home">
+          
           Return to our <a href="https://techoptimum.org">Main Website</a>
           <br />
           <br />
