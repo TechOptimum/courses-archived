@@ -14,11 +14,11 @@ export default function Course({ homeid, bannerurl, alt, title, description }) {
           src={bannerurl}
         ></Image>
         <div className="course-cont">
-          <h1>{title}</h1>
+          <h2>{title}</h2>
           <hr></hr>
        
-         <p>{description}</p>
-          <a className="coursen-button" href={homeid}>Begin Course</a>
+         <p class="course-description">{description}</p>
+            <a className="coursen-button" href={homeid}>Begin Course</a>
         
         </div>
       </div>

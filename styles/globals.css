@@ -4,8 +4,10 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background-color:rgb(5, 10, 37);
-  color:#bfc5f3
+
+  color:#bfc5f3;
+  background: rgb(10,6,65);
+  background: linear-gradient(172deg, rgba(10,6,65,1) 0%, rgba(20,20,103,1) 35%, rgba(36,85,147,1) 81%);
 }
 
 
@@ -25,9 +27,8 @@ a {
   transition:200ms;
   
 }
-a:hover {
 
-  color:rgb(95, 95, 202);
+a:hover {
   text-decoration: none;
 }
 img {
@@ -78,9 +79,9 @@ blockquote {
 
 }
 .course-comp {
-padding-bottom: 10px;
+padding-bottom: 20px;
   background-color: rgb(18, 18, 88);
-  border: 2px solid rgb(5, 10, 37);
+
   border-radius: 15px;
   width:300px;
   transition: 400ms;
@@ -94,11 +95,12 @@ padding-bottom: 10px;
 padding: .5rem .9rem .5rem .9rem; 
 text-align:center;
 }
-.course-cont h1 {
+.course-cont h2 {
   margin:0rem;
 }
 .course-cont p {
-  margin-top: 10px;
+  margin-top: 12px;
+  margin-bottom: 25px;
 }
 .coursen-button {
   background-color: #A7B2FF;
@@ -108,29 +110,16 @@ text-align:center;
   text-decoration: none;
   cursor:pointer;
   transition:300ms;
+
 }
 .coursen-button:hover {
-  padding: 5px 15px 5px 15px;
   text-decoration: none;
   cursor:pointer;
   opacity: .6;
   color: black;
 }
-.course-cat {
-  padding: 3px 10px 3px 10px;
-  background-color: #6877ea;
-  text-decoration: none;
-  border-radius: 10px;
-  width:min-content;
-  text-align:center;
-  font-size: 13px;
-}
-.flexbox-2 {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  display:flex;
-}
+
+
 .arrow {
   padding-left:5px;
   margin-top: 1px;
