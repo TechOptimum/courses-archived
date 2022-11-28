@@ -17,7 +17,7 @@ export default function Course({ homeid, bannerurl, alt, title, description }) {
           <h2>{title}</h2>
           <hr></hr>
        
-         <p class="course-description">{description}</p>
+         <p className="course-description">{description}</p>
             <a className="coursen-button" href={homeid}>Begin Course</a>
         
         </div>
