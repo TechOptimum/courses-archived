@@ -5,7 +5,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background-color:rgb(5, 10, 37);
-  color:#A7B2FF
+  color:#bfc5f3
 }
 
 
@@ -79,16 +79,13 @@ blockquote {
 }
 .course-comp {
 padding-bottom: 10px;
-  background-color: rgb(80, 80, 238);
+  background-color: rgb(18, 18, 88);
   border: 2px solid rgb(5, 10, 37);
   border-radius: 15px;
   width:300px;
   transition: 400ms;
 }
-.course-comp:hover {
-  color:#acb2e2;
-  border: 2px solid #848de2;
-}
+
 .course-image {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -104,16 +101,20 @@ text-align:center;
   margin-top: 10px;
 }
 .coursen-button {
-  padding: 0px 13px 3px 13px;
-  background-color: #6877ea;
+  background-color: #A7B2FF;
+  color: black;
+  border-radius: 8px;
+  padding: 5px 10px 5px 10px;
   text-decoration: none;
-  border-radius: 10px;
-  border: 2px solid transparent;
-  font-size: 18px;
+  cursor:pointer;
+  transition:300ms;
 }
 .coursen-button:hover {
-  color:#acb2e2;
-  border: 2px solid #848de2;
+  padding: 5px 15px 5px 15px;
+  text-decoration: none;
+  cursor:pointer;
+  opacity: .6;
+  color: black;
 }
 .course-cat {
   padding: 3px 10px 3px 10px;

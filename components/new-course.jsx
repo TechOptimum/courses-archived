@@ -15,10 +15,11 @@ export default function Course({ homeid, bannerurl, alt, title, description }) {
         ></Image>
         <div className="course-cont">
           <h1>{title}</h1>
-          <div className="flexbox-2">
+          <hr></hr>
+       
          <p>{description}</p>
           <a className="coursen-button" href={homeid}>Begin Course</a>
-          </div>
+        
         </div>
       </div>
     </>

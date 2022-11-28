@@ -47,6 +47,8 @@ const Home: NextPage = () => {
           ></Course>
         </div>
         <br/>
+        <br/>
+        <br/> 
         <p className="report-bugs-home">
           
           Return to our <a href="https://techoptimum.org">Main Website</a>
