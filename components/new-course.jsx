@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { BsArrowDownRightCircle } from 'react-icons/bs';
+import {TbExternalLink } from 'react-icons/Tb';
 export default function Course({ homeid, bannerurl, alt, title, description }) {
   return (
     <>
@@ -18,7 +19,8 @@ export default function Course({ homeid, bannerurl, alt, title, description }) {
           <hr></hr>
        
          <p className="course-description">{description}</p>
-            <a className="coursen-button" href={homeid}>Begin Course</a>
+            <a className="coursen-button" href={homeid} rel="noreferrer"
+            target={"_blank"}>Begin Course <TbExternalLink className="icon" /></a>
         
         </div>
       </div>
