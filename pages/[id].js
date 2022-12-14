@@ -4,6 +4,7 @@ import { getDatabase, getPage, getBlocks } from "../lib/notion";
 import Link from "next/link";
 import { databaseId } from "./ciurseois.jsx";
 import styles from "./post.module.css";
+import Image from "next/image";
 
 function goToPreviousURL() { 
     window.history.back(); 
@@ -172,9 +173,17 @@ export default function Post({ page, blocks }) {
         <title>{page.properties.Name.title[0].plain_text}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Link href="https://techoptimum.org">
+          <Image
+          
+            className="image-link-secondary"
+            width={"200px"}
+            height="80px"
+            src="/text-lblue-transparent.png"
+          />
+        </Link>
     <div className="page-cont">
-      <br/>
-      <br/>
+     
       <article className={styles.container}>
         <h1 className={styles.name}>
           <Text text={page.properties.Name.title} />

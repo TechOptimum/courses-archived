@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Course from "../components/new-course.jsx";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -13,11 +14,14 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Image
-          width={"400px"}
-          height="150px"
-          src="/text-lblue-transparent.png"
-        />
+        <Link href="https://techoptimum.org">
+          <Image
+            className="image-link"
+            width={"400px"}
+            height="150px"
+            src="/text-lblue-transparent.png"
+          />
+        </Link>
         <h1 className={styles.title}>Courses Portal</h1>
         <br />
         <br />
@@ -28,29 +32,21 @@ const Home: NextPage = () => {
             description="Learn the Basics of HTML, CSS, and JavaScript."
             title={"Intro to Web Dev."}
             alt={"Web Developer Banner"}
-            bannerurl={
-              "/Screen Shot 2022-11-21 at 5.20.08 PM.png"
-            }
+            bannerurl={"/Screen Shot 2022-11-21 at 5.20.08 PM.png"}
           ></Course>
-          
-
-       
 
           <Course
             homeid="32778a40-8f63-4dbc-a6e8-a3f8b6d79e11"
             description="Learn the basics of Python and learn how to use datasets and variables."
             title={"Intro to Python"}
             alt={"Python bingbong"}
-            bannerurl={
-              "/python.jpg"
-            }
+            bannerurl={"/python.jpg"}
           ></Course>
         </div>
-        <br/>
-        <br/>
-        <br/> 
+        <br />
+        <br />
+        <br />
         <p className="report-bugs-home">
-          
           Return to our <a href="https://techoptimum.org">Main Website</a>
           <br />
           <br />

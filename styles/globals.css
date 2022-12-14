@@ -4,86 +4,88 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-
-  color:#bfc5f3;
-  background: rgb(10,6,65);
-  background: linear-gradient(172deg, rgba(10,6,65,1) 0%, rgba(20,20,103,1) 35%, rgba(36,85,147,1) 81%);
+  color: #bfc5f3;
+  background: rgb(30, 37, 101);
 }
-
 
 a {
-
   text-decoration: underline;
-  transition:200ms;
-  
+  transition: 200ms;
 }
+
 hr {
-  border: .3px solid #6877ea !important;
+  border: 0.3px solid #6877ea !important;
   border-radius: 10px;
 }
+
 a {
   color: inherit;
   text-decoration: underline;
-  transition:200ms;
-  
+  transition: 200ms;
 }
 
 a:hover {
   text-decoration: none;
 }
+
 img {
   border-radius: 10px;
 }
 
-
 .previous-button {
-  background-color: #A7B2FF;
+  background-color: #a7b2ff;
   color: black;
   border-radius: 5px;
   padding: 10px;
   text-decoration: none;
   border: 2px solid transparent;
-  cursor:pointer;
-  transition:300ms;
-  margin-bottom:2rem;
+  cursor: pointer;
+  transition: 300ms;
+  margin-bottom: 2rem;
   margin-top: 2rem;
 }
+
 .previous-button:hover {
   border-radius: 5px;
   padding: 10px 15px 10px 15px;
   text-decoration: none;
-  cursor:pointer;
-  opacity: .7;
+  cursor: pointer;
+  opacity: 0.7;
 }
+
 .previous-button:active {
-  opacity: .9;
+  opacity: 0.9;
   border: 2px solid rgb(243, 233, 233);
 }
+
 blockquote {
   background-color: rgb(33, 22, 58);
   border-left: 3px solid blue;
   padding-left: 1rem;
   margin-left: 0rem;
 }
+
 .flexbox {
-  display:flex;
+  display: flex;
 }
+
 .report-bugs {
   margin-top: 38px;
   margin-left: 30px;
-  float:right;
+  float: right;
 }
-.report-bugs-home {
-  bottom:5px;
-  text-align: center;
 
+.report-bugs-home {
+  bottom: 5px;
+  text-align: center;
 }
+
 .course-comp {
-padding-bottom: 20px;
-  background-color: rgb(18, 18, 88);
+  padding-bottom: 20px;
+  background-color: rgb(36, 43, 103);
 
   border-radius: 15px;
-  width:300px;
+  width: 300px;
   transition: 400ms;
 }
 
@@ -91,41 +93,57 @@ padding-bottom: 20px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
+
 .course-cont {
-padding: .5rem .9rem .5rem .9rem; 
-text-align:center;
+  padding: 0.5rem 0.9rem 0.5rem 0.9rem;
+  text-align: center;
 }
+
 .course-cont h2 {
-  margin:0rem;
+  margin: 0rem;
 }
+
 .course-cont p {
   margin-top: 12px;
   margin-bottom: 25px;
 }
+
 .coursen-button {
-  background-color: #A7B2FF;
+  background-color: #a7b2ff;
   color: black;
   border-radius: 8px;
   padding: 5px 10px 5px 10px;
   text-decoration: none;
-  cursor:pointer;
-  transition:300ms;
-
+  cursor: pointer;
+  transition: 300ms;
 }
+
 .coursen-button:hover {
   text-decoration: none;
-  cursor:pointer;
-  opacity: .6;
+  cursor: pointer;
+  opacity: 0.6;
   color: black;
 }
 
-
 .arrow {
-  padding-left:5px;
+  padding-left: 5px;
   margin-top: 1px;
 }
+
 .icon {
-  position:relative;
-  bottom: -1.2px;
-  margin-left: 1px;
+  position: relative;
+  bottom: -2px;
+  margin-left: 3px;
+}
+.image-link {
+  transition: 300ms;
+}
+.image-link:hover {
+  cursor: pointer !important;
+  opacity: .7;
+}
+.image-link-secondary {
+  margin-top:10px !important;
+  margin-left: 1rem !important;
+  
 }
