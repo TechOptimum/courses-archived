@@ -32,7 +32,7 @@ const Home: NextPage = () => {
             description="Learn the Basics of HTML, CSS, and JavaScript."
             title={"Intro to Web Dev."}
             alt={"Web Developer Banner"}
-            bannerurl={"/Screen Shot 2022-11-21 at 5.20.08 PM.png"}
+            bannerurl={"/html.png"}
           ></Course>
 
           <Course

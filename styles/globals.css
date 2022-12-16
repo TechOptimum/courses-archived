@@ -109,10 +109,10 @@ blockquote {
 }
 
 .coursen-button {
-  background-color: #a7b2ff;
-  color: black;
+  background-color: rgb(19, 24, 66);
+  color: #a7b2ff;
   border-radius: 8px;
-  padding: 5px 10px 5px 10px;
+  padding: 8px 15px 8px 15px;
   text-decoration: none;
   cursor: pointer;
   transition: 300ms;
@@ -122,7 +122,6 @@ blockquote {
   text-decoration: none;
   cursor: pointer;
   opacity: 0.6;
-  color: black;
 }
 
 .arrow {
