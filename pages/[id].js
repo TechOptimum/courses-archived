@@ -198,7 +198,9 @@ export default function Post({ page, blocks }) {
             ← Back 
             </button>
            
-            <p className="report-bugs"> Report course errors to our <a rel="noreferrer"target={"_blank"} href="https://discord.gg/w7cymgdRBH">Discord Server</a></p>
+            <p className="report-bugs"> Report course errors to our 
+            <a rel="noreferrer"target={"_blank"} href="https://discord.gg/HpRfm7kp3U">Discord Server</a>
+            </p>
             </div>
        
         </section>

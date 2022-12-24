@@ -54,7 +54,7 @@ const Home: NextPage = () => {
           <a
             rel="noreferrer"
             target={"_blank"}
-            href="https://discord.gg/w7cymgdRBH"
+            href="https://discord.gg/HpRfm7kp3U"
           >
             Discord Server
           </a>

@@ -82,11 +82,10 @@ blockquote {
 
 .course-comp {
   padding-bottom: 20px;
-  background-color: rgb(36, 43, 103);
-
+  background-color: rgb(40, 48, 115);
   border-radius: 15px;
   width: 300px;
-  transition: 400ms;
+  transition: 300ms;
 }
 
 .course-image {
@@ -109,8 +108,8 @@ blockquote {
 }
 
 .coursen-button {
-  background-color: rgb(19, 24, 66);
-  color: #a7b2ff;
+  background-color: #a7b2ff;
+  color: rgb(36, 43, 103);
   border-radius: 8px;
   padding: 8px 15px 8px 15px;
   text-decoration: none;
@@ -121,7 +120,7 @@ blockquote {
 .coursen-button:hover {
   text-decoration: none;
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .arrow {
@@ -134,15 +133,18 @@ blockquote {
   bottom: -2px;
   margin-left: 3px;
 }
+
 .image-link {
   transition: 300ms;
 }
+
 .image-link:hover {
   cursor: pointer !important;
   opacity: .7;
 }
+
 .image-link-secondary {
-  margin-top:10px !important;
+  margin-top: 10px !important;
   margin-left: 1rem !important;
-  
+
 }
