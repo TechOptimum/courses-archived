@@ -27,13 +27,13 @@ const Home: NextPage = () => {
         <br />
 
         <div className={styles.grid}>
-          <Course
+          {/*   <Course
             homeid="5b245c12-e448-43ff-8183-373c37db2a62"
             description="Learn the Basics of HTML, CSS, and JavaScript."
             title={"Intro to Web Dev."}
             alt={"Web Developer Banner"}
             bannerurl={"/html.png"}
-          ></Course>
+  ></Course>*/}
 
           <Course
             homeid="32778a40-8f63-4dbc-a6e8-a3f8b6d79e11"
@@ -41,11 +41,12 @@ const Home: NextPage = () => {
             title={"Intro to Python"}
             alt={"Python bingbong"}
             bannerurl={"/python.jpg"}
-          ></Course>
+          />
+
         </div>
-        <br />
-        <br />
-        <br />
+        <br/>
+        <p className="c-soon">More courses coming soon.</p>
+
         <p className="report-bugs-home">
           Return to our <a href="https://techoptimum.org">Main Website</a>
           <br />

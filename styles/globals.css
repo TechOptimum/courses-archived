@@ -148,3 +148,10 @@ blockquote {
   margin-left: 1rem !important;
 
 }
+.c-soon {
+  font-size: 18px;
+  background-color:#4855b5;
+  padding: 8px 20px 8px 20px;
+  border-radius: 10px;
+  color:rgb(230, 230, 230);
+}
