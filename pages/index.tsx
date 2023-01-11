@@ -20,6 +20,7 @@ const Home: NextPage = () => {
             width={"400px"}
             height="150px"
             src="/text-lblue-transparent.png"
+            alt="Tech Optimum Logo"
           />
         </Link>
         <h1 className={styles.title}>Courses Portal</h1>
@@ -42,9 +43,8 @@ const Home: NextPage = () => {
             alt={"Python bingbong"}
             bannerurl={"/python.jpg"}
           />
-
         </div>
-        <br/>
+        <br />
         <p className="c-soon">More courses coming soon.</p>
 
         <p className="report-bugs-home">

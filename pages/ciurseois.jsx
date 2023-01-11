@@ -3,16 +3,12 @@ import Link from "next/link";
 import { getDatabase } from "../lib/notion";
 import { Text } from "./[id].js";
 
-
-
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export default function miurseois({ posts }) {
   return (
-   <>
-
-    <div className="announcements-container">
-      
+    <>
+      <div className="announcements-container">
         <ol className="announcements">
           {posts.map((post) => {
             const date = new Date(post.last_edited_time).toLocaleString(
@@ -24,8 +20,7 @@ export default function miurseois({ posts }) {
               }
             );
             return (
-              
-              <li  className="post"key={post.id} >
+              <li className="post" key={post.id}>
                 <h3 className="postTitle">
                   <Link href={`/${post.id}`}>
                     <Text text={post.properties.Name.title} />
@@ -33,14 +28,14 @@ export default function miurseois({ posts }) {
                 </h3>
 
                 <p className="postDescription">{date}</p>
-                <Link className="readMoreLink" href={`/${post.id}`}>Read more → </Link>
+                <Link className="readMoreLink" href={`/${post.id}`}>
+                  Read more →{" "}
+                </Link>
               </li>
             );
           })}
         </ol>
-     
-    </div>
-
+      </div>
     </>
   );
 }
@@ -53,6 +48,5 @@ export const getStaticProps = async () => {
       posts: database,
     },
     revalidate: 1,
-  
   };
 };
