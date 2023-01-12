@@ -27,7 +27,7 @@ export default function Home() {
           <h1 className="headline">Courses Portal</h1>
           <p className="align-center">
             You must login with Discord to access Tech Optimum courses. Please
-            click <Link href="/login">here</Link> to login.
+            click <a href="/login">here</a> to login.
           </p>
         </div>
       </div>
@@ -76,7 +76,7 @@ export default function Home() {
         <p className="c-soon">More courses coming soon.</p>
 
         <p className="report-bugs-home">
-          Return to our <Link href="https://techoptimum.org">Main Website</Link>
+          Return to our <a href="https://techoptimum.org">Main Website</a>
           <br />
           <br />
           Report course errors to our{" "}
