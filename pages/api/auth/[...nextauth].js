@@ -9,8 +9,8 @@ export const authOptions = {
       clientSecret: process.env.GITHUB_SECRET,
     }),*/
     DiscordProvider({
-      clientId: process.env.DISCORD_CLIENT_ID,
-      clientSecret: process.env.DISCORD_CLIENT_SECRET,
+      clientId: process.env.NEXTAUTH_DISCORD_CLIENT_ID,
+      clientSecret: process.env.NEXTAUTH_DISCORD_CLIENT_SECRET,
     }),
   ],
   //   Callback here
