@@ -5,7 +5,35 @@ import styles from "../styles/Home.module.css";
 import Course from "../components/new-course.jsx";
 import Link from "next/link";
 
-const Home: NextPage = () => {
+import { useSession } from "next-auth/react";
+
+export default function Home() {
+  const { status } = useSession({
+    required: true,
+    onUnauthenticated() {
+      // The user is not authenticated, handle it here.
+    },
+  });
+
+  if (status === "loading") {
+    return (
+      <div className={styles.container}>
+        <Head>
+          <title>Tech Optimum Courses</title>
+          <meta name="description" content="Courses by Tech Optimum" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <div>
+          <h1 className="headline">Courses Portal</h1>
+          <p className="align-center">
+            You must login with Discord to access Tech Optimum courses. Please
+            click <a href="/login">here</a> to login.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -63,6 +91,4 @@ const Home: NextPage = () => {
       </main>
     </div>
   );
-};
-
-export default Home;
+}

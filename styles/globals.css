@@ -148,10 +148,41 @@ blockquote {
   margin-left: 1rem !important;
 
 }
+
 .c-soon {
   font-size: 18px;
-  background-color:#4855b5;
+  background-color: #4855b5;
   padding: 8px 20px 8px 20px;
   border-radius: 10px;
-  color:rgb(230, 230, 230);
+  color: rgb(230, 230, 230);
+}
+
+.headline {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 100px;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.button-center {
+ padding: 8px 20px 8px 20px;
+  background-color: #7483f3;
+  border: none;
+  border-radius: 10px;
+  color: rgb(253, 253, 253);
+  font-size: 22px;
+  transition: 300ms;
+}
+
+.button-center:hover {
+  cursor: pointer;
+  background-color: #9fa8ec;
+}
+
+.center-div {
+  margin: auto;
+  max-width: 500px;
 }

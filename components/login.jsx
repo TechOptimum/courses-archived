@@ -5,8 +5,8 @@ export default function Login() {
     return (
       <>
         Signed in as {session.user.email} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-        <button onClick={() => window.location("/", "_self")}>
+        <button className="button-center" onClick={() => signOut()}>Sign out</button>
+        <button className="button-center" onClick={() => window.location("/", "_self")}>
           Go to Courses?
         </button>
       </>
@@ -14,8 +14,10 @@ export default function Login() {
   }
   return (
     <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
+    <div className="center-div">
+<h1 className="align-center">Please sign in with Discord</h1>
+      <button className="button-center" onClick={() => signIn()}>Sign in</button>
+      </div>
     </>
   );
 }
