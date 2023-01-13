@@ -115,6 +115,7 @@ blockquote {
   text-decoration: none;
   cursor: pointer;
   transition: 300ms;
+  border: none;
 }
 
 .coursen-button:hover {
@@ -183,8 +184,11 @@ blockquote {
 }
 
 .center-div {
+  margin-top:3rem !important;
   margin: auto;
   max-width: 500px;
+  text-align: center;
+  justify-content: center;
 }
 
 .center-section {
@@ -210,4 +214,13 @@ blockquote {
   width: 50px;
   height: 50px;
   margin-right: .8rem;
+}
+.relative {
+  position: relative;
+  height: 85vh;
+}
+.absolute {
+  position: absolute; 
+bottom: 0;
+left: 50px;
 }

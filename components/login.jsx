@@ -6,16 +6,21 @@ export default function Login() {
   if (session) {
     return (
       <>
+      <div className="relative">
         <div className="center-section">
           <br />
 
           <div className="flex">
-            <img className="discord-pfp" width={"40px"} src={session.user.image} />
+            <img
+              className="discord-pfp"
+              width={"40px"}
+              src={session.user.image}
+            />
             <h1 className="align-center">
-              {session.user.name}, Welcome to Tech Optimum Courses{" "}
+              {session.user.name}, Welcome to Tech Optimum Courses
             </h1>
           </div>
-      
+         
         </div>
         <div className={styles.grid}>
           {/*   <Course
@@ -34,16 +39,24 @@ export default function Login() {
             bannerurl={"/python.jpg"}
           />
         </div>
+        <div className="absolute">
+          <button className="coursen-button" onClick={() => signOut()}>Logout of {session.user.name}</button>
+
+        </div>
+        </div>
       </>
     );
   }
   return (
     <>
       <div className="center-div">
-        <h1 className="align-center">Please sign in with Discord</h1>
+
+          <br/>
         <button className="button-center" onClick={() => signIn()}>
-          Sign in
+          Sign in with Discord
         </button>
+
+        
       </div>
     </>
   );
