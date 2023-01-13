@@ -168,7 +168,7 @@ blockquote {
 }
 
 .button-center {
- padding: 8px 20px 8px 20px;
+  padding: 8px 20px 8px 20px;
   background-color: #7483f3;
   border: none;
   border-radius: 10px;
@@ -185,4 +185,29 @@ blockquote {
 .center-div {
   margin: auto;
   max-width: 500px;
+}
+
+.center-section {
+  margin: auto !important;
+  max-width: 800px;
+  text-align: center;
+  background: linear-gradient(156.16deg, #0f3b83 17.37%, #334c81 86.15%);
+  border-radius: 14px;
+  padding-bottom: 10px;
+  margin-top: 4rem !important;
+  margin-bottom: 2.5rem !important;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.discord-pfp {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: .8rem;
 }
