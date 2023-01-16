@@ -38,6 +38,14 @@ export default function Login() {
             alt={"Python bingbong"}
             bannerurl={"/python.jpg"}
           />
+          <Course
+            homeid="9a393c4c-a7ba-42b2-a55e-0d630102eda4"
+            description={"Learn the basics of SQL and learn how to use databases."}
+            title={"Intro to SQL"}
+            alt={"SQL Banner"}
+            bannerurl={"/sql.jpg"}
+    
+          />
         </div>
         <div className="absolute">
           <button className="coursen-button" onClick={() => signOut()}>Logout of {session.user.name}</button>
