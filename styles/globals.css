@@ -8,10 +8,7 @@ body {
   background: rgb(30, 37, 101);
 }
 
-a {
-  text-decoration: underline;
-  transition: 200ms;
-}
+
 
 hr {
   border: 0.3px solid #6877ea !important;
@@ -19,13 +16,25 @@ hr {
 }
 
 a {
-  color: inherit;
-  text-decoration: underline;
-  transition: 200ms;
+  text-decoration: none;
+  padding: 3px;
+  color: rgb(59, 122, 230);
+	background: 
+		linear-gradient(to right, rgb(77, 133, 230), rgb(85, 100, 231)),
+		linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
+	background-size: 100% 0.15em, 0 0.15em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+	transition: background-size 500ms;
+  transition: all 500ms;
 }
 
-a:hover {
-  text-decoration: none;
+a:hover,
+a:focus {
+
+	background-size: 0 0.15em, 100% 0.15em;
+  color: rgb(245, 122, 97);
+ 
 }
 
 img {
