@@ -1,29 +1,41 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { BsArrowDownRightCircle } from 'react-icons/bs';
-import {TbExternalLink } from 'react-icons/tb';
+import { BsArrowDownRightCircle } from "react-icons/bs";
+import { TbExternalLink } from "react-icons/tb";
+import Link from "next/link";
+import { Flex, Box, Text, Heading, Button } from "@chakra-ui/react";
+
 export default function Course({ homeid, bannerurl, alt, title, description }) {
   return (
     <>
-      <div className="course-comp">
-        <Image
-          className="course-image"
-          width={"400px"}
-          height="150px"
-          alt={alt}
-          src={bannerurl}
-        ></Image>
-        <div className="course-cont">
-          <h2>{title}</h2>
-          <hr></hr>
-       
-         <p className="course-description">{description}</p>
-            <a className="coursen-button" href={homeid} rel="noreferrer"
-            target={"_blank"}>Begin Course <TbExternalLink className="icon" /></a>
-        
-        </div>
-      </div>
+      <Box borderRadius={"20px"} backgroundColor={"brand.700"} maxW={"300px"}>
+        <Image width={"400px"} height="150px" alt={alt} src={bannerurl} />
+        <Flex padding="10px 1rem" direction="column">
+          <Heading color={"brand.800"} fontSize={"2xl"}>
+            {title}
+          </Heading>
+
+          <Text mt="4px" fontSize={"sm"}>
+            {description}
+          </Text>
+
+          <Button
+          mt="8px"
+          _hover={{
+            color: "brand.800",
+          }}
+            color="brand.900"
+            maxW={"50%"}
+            fontWeight={"100"}
+            backgroundColor={"brand.600"}
+          >
+            <Link href={homeid} rel="noreferrer" target={"_blank"}>
+              Begin Course
+            </Link>
+          </Button>
+        </Flex>
+      </Box>
     </>
   );
 }
