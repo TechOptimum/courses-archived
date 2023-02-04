@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: Urbanist, sans-serif !important;
- 
+
   background: #0f172a !important;
 }
 
@@ -16,9 +17,11 @@ hr {
   border: 0.3px solid #292e55 !important;
   border-radius: 10px;
 }
+
 h1 {
   color: white !important;
 }
+
 p {
   color: #94a3b8 !important;
 }
@@ -29,8 +32,8 @@ p {
   color: rgb(59, 122, 230);
   background:
     linear-gradient(to right, rgb(77, 133, 230), rgb(85, 100, 231)),
-    linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
-  background-size: 100% 0.15em, 0 0.15em;
+    linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1)) !important;
+  background-size: 100% 0.15em, 0 0.15em !important;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
   transition: background-size 500ms;
@@ -53,7 +56,7 @@ img {
   background-color: #a7b2ff;
   color: black;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px 15px 5px 15px;
   text-decoration: none;
   border: 2px solid transparent;
   cursor: pointer;
@@ -64,7 +67,7 @@ img {
 
 .previous-button:hover {
   border-radius: 5px;
-  padding: 10px 15px 10px 15px;
+  padding: 5px 25px 5px 25px;
   text-decoration: none;
   cursor: pointer;
   opacity: 0.7;
@@ -76,10 +79,16 @@ img {
 }
 
 blockquote {
-  background-color: rgb(33, 22, 58);
-  border-left: 3px solid blue;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  margin-bottom: 15px !important;
+  margin-top: 15px !important;
+  background-color: rgb(22, 27, 58);
+  border-left: 3px solid rgb(86, 86, 164);
   padding-left: 1rem;
   margin-left: 0rem;
+  color: white;
+
 }
 
 .report-bugs {
@@ -96,27 +105,21 @@ blockquote {
 
 
 
-.coursen-button {
-  background-color: #a7b2ff !important;
-  border-radius: 8px;
-  padding: 8px 15px 8px 15px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: 300ms;
-  border: none;
 
-  background:
-    linear-gradient(to right, rgb(77, 133, 230), rgb(85, 100, 231)),
-    linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
-  background-size: 0% 0.15em, 0 0.15em;
-  background-position: 100% 100%, 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size 500ms;
-  transition: all 500ms;
+
+.brand900 {
+  padding-top: 4px;
+  color: #94a3b8;
 }
 
-.coursen-button:hover {
-  text-decoration: none;
-  cursor: pointer;
-  opacity: 0.5;
+.code-block {
+color:rgb(224, 224, 224);
+  background-color: rgb(34, 36, 65);
+  padding: 2px 4px;
+  margin: 20px 0;
+  line-height: 2.3;
+  border-radius: 12px;
+  overflow: auto;
+ 
+
 }

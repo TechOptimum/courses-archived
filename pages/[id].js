@@ -34,7 +34,11 @@ export const Text = ({ text }) => {
         ].join(" ")}
         style={color !== "default" ? { color } : {}}
       >
-        {text.link ? <Link color="black !important" href={text.link.url}>{text.content}</Link> : text.content}
+        {text.link ? <Link isExternal _hover={{
+
+          textDecoration: "none",
+          color: "brand.900",
+        }} color={"#fff"} fontWeight={"500"} href={text.link.url}>{text.content}</Link> : text.content}
       </span>
     );
   });
@@ -66,29 +70,29 @@ const renderBlock = (block) => {
       );
     case "heading_1":
       return (
-        <Heading color="brand.900" >
+        <Heading color="brand.800 !important" >
           <Text text={value.rich_text} />
         </Heading>
       );
     case "heading_2":
       return (
-        <Heading color="brand.900" mb="10px" fontSize={"2xl"}>
+        <Heading color="brand.800 !important" mb="10px" fontSize={"2xl"}>
           <Text text={value.rich_text} />
           </Heading>
       );
     case "heading_3":
       return (
-        <Heading color="brand.900" my="10px" fontSize={"xl"}>
+        <Heading color="brand.800" my="10px" fontSize={"xl"}>
           <Text text={value.rich_text} />
           </Heading>
       );
     case "bulleted_list_item":
     case "numbered_list_item":
       return (
-        <Box  color="brand.900 ">
-          <Text  text={value.rich_text} />
+        <li className="brand900">
+          <Text className="customList" text={value.rich_text} />
           {!!value.children && renderNestedList(block)}
-        </Box>
+        </li>
       );
     case "to_do":
       return (
@@ -101,6 +105,7 @@ const renderBlock = (block) => {
       );
     case "toggle":
       return (
+        <Box py="10px" color="brand.900">
         <details>
           <summary>
             <Text text={value.rich_text} />
@@ -109,6 +114,7 @@ const renderBlock = (block) => {
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
           ))}
         </details>
+        </Box>
       );
     case "child_page":
       return <p>{value.title}</p>;
@@ -128,7 +134,7 @@ const renderBlock = (block) => {
       return <blockquote key={id}>{value.rich_text[0].plain_text}</blockquote>;
     case "code":
       return (
-        <pre className={styles.pre}>
+        <pre className="code-block">
           <code className={styles.code_block} key={id}>
             {value.rich_text[0].plain_text}
           </code>
