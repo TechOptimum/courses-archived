@@ -21,10 +21,10 @@ export default function Course({ homeid, bannerurl, alt, title, description }) {
           </Text>
 
           <Button
-          mt="8px"
-          _hover={{
-            color: "brand.800",
-          }}
+            mt="8px"
+            _hover={{
+              color: "brand.800",
+            }}
             color="brand.900"
             maxW={"50%"}
             fontWeight={"100"}

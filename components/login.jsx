@@ -17,17 +17,18 @@ export default function Login() {
   if (session) {
     return (
       <>
-        <Flex alignItems={"center"} backgroundColor={"brand.700"} py="12px" px="30px">
-        <Heading fontSize={"2xl"} color="brand.800">
+        <Flex
+          alignItems={"center"}
+          backgroundColor={"brand.700"}
+          py="12px"
+          px="30px"
+        >
+          <Heading fontSize={"2xl"} color="brand.800">
             {session.user.name}, Welcome to Tech Optimum Courses
           </Heading>
-          
+
           <Spacer />
-          <Image
-           
-            width={"41px"}
-            src={session.user.image}
-          />
+          <Image width={"41px"} src={session.user.image} />
         </Flex>
         <Wrap
           mx={["2rem !important", "auto !important"]}
@@ -37,7 +38,7 @@ export default function Login() {
           direction="row"
           justify="center"
           zIndex="100"
-          marginTop={["10px", "5px"]}
+          marginTop={["1rem", "4rem"]}
           spacing="30px"
         >
           <Course
@@ -67,9 +68,20 @@ export default function Login() {
           />
         </Wrap>
         <div className="absolute">
-          <button className="coursen-button" onClick={() => signOut()}>
+          <Button
+            ml="20px"
+            mt="8px"
+            _hover={{
+              color: "brand.800",
+            }}
+            color="brand.900"
+            maxW={"50%"}
+            fontWeight={"100"}
+            backgroundColor={"brand.700"}
+            nClick={() => signOut()}
+          >
             Logout of {session.user.name}
-          </button>
+          </Button>
         </div>
       </>
     );
