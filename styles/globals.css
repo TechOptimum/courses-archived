@@ -11,7 +11,9 @@ body {
 
 
 hr {
-  border: 0.3px solid #6877ea !important;
+  margin-bottom: 10px !important;
+  margin-top: 10px !important;
+  border: 0.3px solid #292e55 !important;
   border-radius: 10px;
 }
 h1 {

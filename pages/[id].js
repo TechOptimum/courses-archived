@@ -1,10 +1,12 @@
 import { Fragment } from "react";
 import Head from "next/head";
 import { getDatabase, getPage, getBlocks } from "../lib/notion";
-import Link from "next/link";
+
 import { databaseId } from "./ciurseois.jsx";
 import styles from "./post.module.css";
 import Image from "next/image";
+import {Link,Box, Heading} from "@chakra-ui/react";
+
 
 function goToPreviousURL() { 
     window.history.back(); 
@@ -32,7 +34,7 @@ export const Text = ({ text }) => {
         ].join(" ")}
         style={color !== "default" ? { color } : {}}
       >
-        {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
+        {text.link ? <Link color="black !important" href={text.link.url}>{text.content}</Link> : text.content}
       </span>
     );
   });
@@ -58,35 +60,35 @@ const renderBlock = (block) => {
   switch (type) {
     case "paragraph":
       return (
-        <p>
+        <Box color="brand.900" mt="10px" >
           <Text text={value.rich_text} />
-        </p>
+        </Box>
       );
     case "heading_1":
       return (
-        <h1>
+        <Heading color="brand.900" >
           <Text text={value.rich_text} />
-        </h1>
+        </Heading>
       );
     case "heading_2":
       return (
-        <h2>
+        <Heading color="brand.900" mb="10px" fontSize={"2xl"}>
           <Text text={value.rich_text} />
-        </h2>
+          </Heading>
       );
     case "heading_3":
       return (
-        <h3>
+        <Heading color="brand.900" my="10px" fontSize={"xl"}>
           <Text text={value.rich_text} />
-        </h3>
+          </Heading>
       );
     case "bulleted_list_item":
     case "numbered_list_item":
       return (
-        <li>
-          <Text text={value.rich_text} />
+        <Box  color="brand.900 ">
+          <Text  text={value.rich_text} />
           {!!value.children && renderNestedList(block)}
-        </li>
+        </Box>
       );
     case "to_do":
       return (
@@ -132,6 +134,12 @@ const renderBlock = (block) => {
           </code>
         </pre>
       );
+      case "link_to_page": 
+      return (
+        <Box mt="50px">
+        <Text  text={value.rich_text} />
+        </Box>
+      )
     case "file":
       const src_file =
         value.type === "external" ? value.external.url : value.file.url;
