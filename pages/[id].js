@@ -76,7 +76,7 @@ const renderBlock = (block) => {
       );
     case "heading_2":
       return (
-        <Heading color="brand.800 !important" mb="10px" fontSize={"2xl"}>
+        <Heading   color="brand.800 !important" my="13px" fontSize={"2xl"}>
           <Text text={value.rich_text} />
           </Heading>
       );

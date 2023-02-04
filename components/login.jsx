@@ -7,6 +7,7 @@ import {
   Wrap,
   Flex,
   Box,
+  Center,
   Text,
   Heading,
   Button,
@@ -78,7 +79,7 @@ export default function Login() {
             maxW={"50%"}
             fontWeight={"100"}
             backgroundColor={"brand.700"}
-            nClick={() => signOut()}
+            onClick={() => signOut()}
           >
             Logout of {session.user.name}
           </Button>
@@ -88,12 +89,24 @@ export default function Login() {
   }
   return (
     <>
-      <div className="center-div">
-        <br />
-        <button className="button-center" onClick={() => signIn()}>
+      <Center flexDirection={"column"}>
+        <Heading color="brand.800" mt="8rem">
+          Tech Optimum Courses
+        </Heading>
+        <Button
+          mt="1rem"
+          _hover={{
+            color: "brand.800",
+          }}
+          color="brand.900"
+          maxW={"50%"}
+          fontWeight={"100"}
+          backgroundColor={"brand.700"}
+          onClick={() => signIn()}
+        >
           Sign in with Discord
-        </button>
-      </div>
+        </Button>
+      </Center>
     </>
   );
 }
