@@ -5,26 +5,26 @@ import { getDatabase, getPage, getBlocks } from "../lib/notion";
 import { databaseId } from "./ciurseois.jsx";
 import styles from "./post.module.css";
 import Image from "next/image";
-import {Link,Box, Heading} from "@chakra-ui/react";
+import { Link, Box, Heading } from "@chakra-ui/react";
 
 
-function goToPreviousURL() { 
-    window.history.back(); 
-    } 
+function goToPreviousURL() {
+  window.history.back();
+}
+
 export const Text = ({ text }) => {
   if (!text) {
     return null;
   }
-  
+
   return text.map((value) => {
     const {
       annotations: { bold, code, color, italic, strikethrough, underline },
       text,
     } = value;
     return (
-        
       <span
-      key={value.toString}
+        key={value.toString}
         className={[
           bold ? styles.bold : "",
           code ? styles.code : "",
@@ -76,15 +76,15 @@ const renderBlock = (block) => {
       );
     case "heading_2":
       return (
-        <Heading   color="brand.800 !important" my="13px" fontSize={"2xl"}>
+        <Heading color="brand.800 !important" my="13px" fontSize={"2xl"}>
           <Text text={value.rich_text} />
-          </Heading>
+        </Heading>
       );
     case "heading_3":
       return (
         <Heading color="brand.800" my="10px" fontSize={"xl"}>
           <Text text={value.rich_text} />
-          </Heading>
+        </Heading>
       );
     case "bulleted_list_item":
     case "numbered_list_item":
@@ -106,14 +106,14 @@ const renderBlock = (block) => {
     case "toggle":
       return (
         <Box py="10px" color="brand.900">
-        <details>
-          <summary>
-            <Text text={value.rich_text} />
-          </summary>
-          {value.children?.map((block) => (
-            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-          ))}
-        </details>
+          <details>
+            <summary>
+              <Text text={value.rich_text} />
+            </summary>
+            {value.children?.map((block) => (
+              <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+            ))}
+          </details>
         </Box>
       );
     case "child_page":
@@ -140,10 +140,10 @@ const renderBlock = (block) => {
           </code>
         </pre>
       );
-      case "link_to_page": 
+    case "link_to_page":
       return (
         <Box mt="50px">
-        <Text  text={value.rich_text} />
+          <Text text={value.rich_text} />
         </Box>
       )
     case "file":
@@ -171,9 +171,8 @@ const renderBlock = (block) => {
         </a>
       );
     default:
-      return `❌ Unsupported block (${
-        type === "unsupported" ? "unsupported by Notion API" : type
-      })`;
+      return `❌ Unsupported block (${type === "unsupported" ? "unsupported by Notion API" : type
+    })`;
   }
 };
 
@@ -181,6 +180,7 @@ export default function Post({ page, blocks }) {
   if (!page || !blocks) {
     return <div />;
   }
+  
   return (
     <div>
       <Head>
@@ -188,45 +188,46 @@ export default function Post({ page, blocks }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Link href="https://techoptimum.org">
-          <Image
-          
-            className="image-link-secondary"
-            width={"200px"}
-            height="80px"
-            src="/text-lblue-transparent.png"
-          />
-        </Link>
-    <div className="page-cont">
-     
-      <article className={styles.container}>
-        <h1 className={styles.name}>
-          <Text text={page.properties.Name.title} />
-        </h1>
-        <section>
-          {blocks.map((block) => (
-            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-          ))}
-          <div className="flexbox">
-         <button onClick={ goToPreviousURL }
-          className="previous-button">
-            ← Back 
-            </button>
-           
-            <p className="report-bugs"> Report course errors to our&nbsp;
-            <a rel="noreferrer"target={"_blank"} href="https://discord.gg/HpRfm7kp3U">Discord Server</a>
-            </p>
+        <Image
+
+          className="image-link-secondary"
+          width={"200px"}
+          height="80px"
+          src="/text-lblue-transparent.png"
+        />
+      </Link>
+      <div className="page-cont">
+
+        <article className={styles.container}>
+          <h1 className={styles.name}>
+            <Text text={page.properties.Name.title} />
+          </h1>
+          <section>
+            {blocks.map((block) => (
+              <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+            ))}
+            <div className="flexbox">
+              <button onClick={goToPreviousURL}
+                className="previous-button">
+                ← Back
+              </button>
+
+              <p className="report-bugs"> Report course errors to our&nbsp;
+                <a rel="noreferrer" target={"_blank"} href="https://discord.gg/HpRfm7kp3U">Discord Server</a>
+              </p>
             </div>
-       
-        </section>
-      </article>
+
+          </section>
+        </article>
       </div>
     </div>
-    
+
   );
 }
 
 export const getStaticPaths = async () => {
   const database = await getDatabase(databaseId);
+  console.log(database);
   return {
     paths: database.map((page) => ({ params: { id: page.id } })),
     fallback: true,
@@ -250,6 +251,7 @@ export const getStaticProps = async (context) => {
         };
       })
   );
+
   const blocksWithChildren = blocks.map((block) => {
     // Add child blocks if the block should contain children but none exists
     if (block.has_children && !block[block.type].children) {
