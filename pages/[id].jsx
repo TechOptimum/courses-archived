@@ -7,40 +7,32 @@ import styles from "./post.module.css";
 import Image from "next/image";
 import { Link, Box, Heading } from "@chakra-ui/react";
 
-
-function goToPreviousURL() {
-  window.history.back();
-}
-
 export const Text = ({ text }) => {
-  if (!text) {
-    return null;
-  }
-
-  return text.map((value) => {
-    const {
-      annotations: { bold, code, color, italic, strikethrough, underline },
-      text,
-    } = value;
-    return (
-      <span
-        key={value.toString}
-        className={[
-          bold ? styles.bold : "",
-          code ? styles.code : "",
-          italic ? styles.italic : "",
-          strikethrough ? styles.strikethrough : "",
-          underline ? styles.underline : "",
-        ].join(" ")}
-        style={color !== "default" ? { color } : {}}
-      >
-        {text.link ? <Link isExternal _hover={{
-          textDecoration: "none",
-          color: "brand.900",
-        }} color={"#fff"} fontWeight={"500"} href={text.link.url}>{text.content}</Link> : text.content}
-      </span>
-    );
-  });
+  return (!text) ? null :
+    text.map((value) => {
+      const {
+        annotations: { bold, code, color, italic, strikethrough, underline },
+        text,
+      } = value;
+      return (
+        <span
+          key={value.toString}
+          className={[
+            bold ? styles.bold : "",
+            code ? styles.code : "",
+            italic ? styles.italic : "",
+            strikethrough ? styles.strikethrough : "",
+            underline ? styles.underline : "",
+          ].join(" ")}
+          style={color !== "default" ? { color } : {}}
+        >
+          {text.link ? <Link isExternal _hover={{
+            textDecoration: "none",
+            color: "brand.900",
+          }} color={"#fff"} fontWeight={"500"} href={text.link.url}>{text.content}</Link> : text.content}
+        </span>
+      );
+    });
 };
 
 const renderNestedList = (block) => {
@@ -50,10 +42,11 @@ const renderNestedList = (block) => {
 
   const isNumberedList = value.children[0].type === "numbered_list_item";
 
-  if (isNumberedList) {
-    return <ol>{value.children.map((block) => renderBlock(block))}</ol>;
-  }
-  return <ul>{value.children.map((block) => renderBlock(block))}</ul>;
+  return (isNumberedList) ? (
+    <ol>{value.children.map((block) => renderBlock(block))}</ol>
+  ) : (
+    <ul>{value.children.map((block) => renderBlock(block))}</ul>
+  );
 };
 
 const renderBlock = (block) => {
@@ -132,6 +125,7 @@ const renderBlock = (block) => {
     case "quote":
       return <blockquote key={id}>{value.rich_text[0].plain_text}</blockquote>;
     case "code":
+      // TODO: Get syntax highlighting here
       return (
         <pre className="code-block">
           <code className={styles.code_block} key={id}>
@@ -144,7 +138,7 @@ const renderBlock = (block) => {
         <Box mt="50px">
           <Text text={value.rich_text} />
         </Box>
-      )
+      );
     case "file":
       const src_file =
         value.type === "external" ? value.external.url : value.file.url;
@@ -170,17 +164,12 @@ const renderBlock = (block) => {
         </a>
       );
     default:
-      return `❌ Unsupported block (${type === "unsupported" ? "unsupported by Notion API" : type
-    })`;
+      return `❌ Unsupported block (${type === "unsupported" ? "unsupported by Notion API" : type})`;
   }
 };
 
 export default function Post({ page, blocks }) {
-  if (!page || !blocks) {
-    return <div />;
-  }
-  
-  return (
+  return (!page || !blocks) ? <div /> : (
     <div>
       <Head>
         <title>{page.properties.Name.title[0].plain_text}</title>
@@ -188,11 +177,11 @@ export default function Post({ page, blocks }) {
       </Head>
       <Link href="https://techoptimum.org">
         <Image
-
           className="image-link-secondary"
           width={"200px"}
           height="80px"
           src="/text-lblue-transparent.png"
+          alt="Tech Optimum"
         />
       </Link>
       <div className="page-cont">
@@ -205,7 +194,7 @@ export default function Post({ page, blocks }) {
               <Fragment key={block.id}>{renderBlock(block)}</Fragment>
             ))}
             <div className="flexbox">
-              <button onClick={goToPreviousURL}
+              <button onClick={() => window.history.back()}
                 className="previous-button">
                 ← Back
               </button>
@@ -222,7 +211,6 @@ export default function Post({ page, blocks }) {
 
 export const getStaticPaths = async () => {
   const database = await getDatabase(databaseId);
-  console.log(database);
   return {
     paths: database.map((page) => ({ params: { id: page.id } })),
     fallback: true,
