@@ -28,7 +28,7 @@ export default function Login() {
         <Spacer />
 
         <Button
-          pl="0px"
+          pl="2px"
           _hover={{
             color: "brand.800",
             backgroundColor: "brand.500"
