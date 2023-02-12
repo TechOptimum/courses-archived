@@ -35,7 +35,6 @@ export const Text = ({ text }) => {
         style={color !== "default" ? { color } : {}}
       >
         {text.link ? <Link isExternal _hover={{
-
           textDecoration: "none",
           color: "brand.900",
         }} color={"#fff"} fontWeight={"500"} href={text.link.url}>{text.content}</Link> : text.content}
@@ -166,7 +165,7 @@ const renderBlock = (block) => {
     case "bookmark":
       const href = value.url;
       return (
-        <a href={href} target="_brank" className={styles.bookmark}>
+        <a href={href} rel="noreferrer" target="_blank" className={styles.bookmark}>
           {href}
         </a>
       );
@@ -197,7 +196,6 @@ export default function Post({ page, blocks }) {
         />
       </Link>
       <div className="page-cont">
-
         <article className={styles.container}>
           <h1 className={styles.name}>
             <Text text={page.properties.Name.title} />
@@ -211,17 +209,14 @@ export default function Post({ page, blocks }) {
                 className="previous-button">
                 ← Back
               </button>
-
               <p className="report-bugs"> Report course errors to our&nbsp;
                 <a rel="noreferrer" target={"_blank"} href="https://discord.gg/HpRfm7kp3U">Discord Server</a>
               </p>
             </div>
-
           </section>
         </article>
       </div>
     </div>
-
   );
 }
 
