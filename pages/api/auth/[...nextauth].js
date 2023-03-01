@@ -1,36 +1,55 @@
 import NextAuth from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
+import axios from "axios";
 
-export const authOptions = {
-  // Configure one or more authentication providers
-  providers: [
-    /*   GithubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
-    }),*/
-    DiscordProvider({
+export default NextAuth({
+	secret: process.env.NEXTAUTH_SECRET,
+	providers: [
+		DiscordProvider({
       clientId: process.env.NEXTAUTH_DISCORD_CLIENT_ID,
-      clientSecret: process.env.NEXTAUTH_DISCORD_CLIENT_SECRET,
-    }),
-  ],
-  //   Callback here
-  //   Here
-  callbacks: {
-    async jwt({ token, account }) {
-      // Persist the OAuth access_token to the token right after signin
-      if (account) {
-        token.accessToken = account.access_token;
-      }
-      return token;
-    },
-    async session({ session, token, user }) {
-      // Send properties to the client, like an access_token from a provider.
-      session.accessToken = token.accessToken;
-      return session;
-    },
-  },
-  secret: process.env.NEXTAUTH_SECRET,
-};
+      clientSecret: process.env.NEXTAUTH_DISCORD_CLIENT_SECRET || "",
+			authorization: { params: { scope: "identify email guilds.join" } },
+		}),
+	], 
+	debug: true,
+	session: {
+		// @ts-ignore
+		jwt: true,
+	},
+	callbacks: {
+		async jwt({ token, account }) {
+			if (account) {
+				token.accessToken = account.access_token;
 
-export default NextAuth(authOptions);
+				try {
+					if (!token.accessToken) return token;
+					// console.log(token.accessToken, "ACCESS TOKEN");
+					// add user to discord server
+					await axios.put(
+						`https://discord.com/api/guilds/1080351093076271124/members/${token.sub}`,
+						{
+							access_token: `${token.accessToken}`,
+						},
+						{
+							headers: {
+								Authorization: `Bot ${process.env.DISCORD_BOT_TOKEN}`,
+							},
+						}
+					);
+				} catch (e) {
+					// console.log(e.response.data);
+				}
+			}
+			return token;
+		},
+		async session({ session, token }) {
+			if (!session) return session;
+			// @ts-ignore
+			session.accessToken = token.accessToken;
+			// @ts-ignore
+			session.user.id = token.sub;
 
+			return session;
+		},
+	},
+});
