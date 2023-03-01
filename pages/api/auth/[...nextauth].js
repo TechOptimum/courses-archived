@@ -19,6 +19,7 @@ export default NextAuth({
     async jwt({ token, account }) {
       if (account) {
         token.accessToken = account.access_token;
+        token.idToken = account.id_token;
 
         try {
           if (!token.accessToken) return token;
@@ -39,9 +40,8 @@ export default NextAuth({
     },
     async session({ session, token }) {
       if (!session) return session;
-      // @ts-ignore
       session.accessToken = token.accessToken;
-      // @ts-ignore
+      session.idToken = token.idToken;
       session.user.id = token.sub;
 
       return session;
