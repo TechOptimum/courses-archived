@@ -112,6 +112,10 @@ blockquote {
   color: #94a3b8;
 }
 
+.brand900 .brand900 {
+  margin-left: 1rem;
+}
+
 .code-block {
 color:rgb(224, 224, 224);
   background-color: rgb(34, 36, 65);
@@ -120,6 +124,6 @@ color:rgb(224, 224, 224);
   line-height: 2.3;
   border-radius: 12px;
   overflow: auto;
- 
+
 
 }
