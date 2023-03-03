@@ -103,21 +103,29 @@ blockquote {
 }
 
 
-
-
-
-
 .brand900 {
   padding-top: 4px;
   color: #94a3b8;
 }
 
-.brand900 .brand900 {
-  margin-left: 1rem;
+@media screen and (-webkit-min-device-pixel-ratio:0)
+  and (min-resolution:.001dpcm) {
+  .brand900 > ul {
+    margin-left: 1rem;
+    list-style-position: inside;
+  }
 }
 
+@-moz-document url-prefix() {
+  .brand900 > ul {
+    margin-left: 1rem;
+
+  }
+}
+
+
 .code-block {
-color:rgb(224, 224, 224);
+  color: rgb(224, 224, 224);
   background-color: rgb(34, 36, 65);
   padding: 2px 4px;
   margin: 20px 0;
