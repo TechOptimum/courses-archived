@@ -83,6 +83,7 @@ export default function Login({ loadingScreenCallback }) {
           courses.map((course) => (
             <Course
               homeid={course.homeid}
+              key={course.homeid}
               description={course.description}
               title={course.title}
               alt={course.alt}
