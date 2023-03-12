@@ -1,8 +1,4 @@
-import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import { BsArrowDownRightCircle } from "react-icons/bs";
-import { TbExternalLink } from "react-icons/tb";
 import Link from "next/link";
 import { Flex, Box, Text, Heading, Button } from "@chakra-ui/react";
 

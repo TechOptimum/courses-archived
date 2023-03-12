@@ -5,7 +5,7 @@ import React from "react";
 export default function HomePage() {
   return (
     <div>
-      <Login />
+      <Login loadingScreenCallback={undefined} />
       {/* hello */}
     </div>
   );
