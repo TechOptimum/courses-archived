@@ -1,5 +1,5 @@
 import { useSession, signIn, signOut } from "next-auth/react";
-import Course from "../components/new-course";
+import Course from "./new-course";
 import {
   Spacer,
   Image,
@@ -11,8 +11,31 @@ import {
 } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
 
-export default function Login() {
+export default function Login({ loadingScreenCallback }) {
   const { data: session } = useSession();
+  const courses = [
+    {
+      homeid: "32778a40-8f63-4dbc-a6e8-a3f8b6d79e11",
+      description: "Learn the basics of Python and learn how to use datasets and variables.",
+      title: "Intro to Python",
+      alt: "Python bingbong",
+      bannerurl: "/python.jpg"
+    },
+    {
+      homeid: "9a393c4c-a7ba-42b2-a55e-0d630102eda4",
+      description: "Learn the basics of SQL and learn how to use databases.",
+      title: "Intro SQL",
+      alt: "SQL Banner",
+      bannerurl: "/sql.jpg"
+    },
+    {
+      homeid: "c17129ba-2946-45d1-9487-79855746c4ca",
+      description: "Learn the basics of Javascript and learn how to use variables and functions.",
+      title: "Intro to Javascript",
+      alt: "Javascript Banner",
+      bannerurl: "/javascript.jpg"
+    }
+  ];
   return (session) ? (
     <>
       <Flex
@@ -56,31 +79,18 @@ export default function Login() {
         marginTop={["1rem", "4rem"]}
         spacing="30px"
       >
-        <Course
-          homeid="32778a40-8f63-4dbc-a6e8-a3f8b6d79e11"
-          description="Learn the basics of Python and learn how to use datasets and variables."
-          title={"Intro to Python"}
-          alt={"Python bingbong"}
-          bannerurl={"/python.jpg"}
-        />
-        <Course
-          homeid="9a393c4c-a7ba-42b2-a55e-0d630102eda4"
-          description={
-            "Learn the basics of SQL and learn how to use databases."
-          }
-          title={"Intro to SQL"}
-          alt={"SQL Banner"}
-          bannerurl={"/sql.jpg"}
-        />
-        <Course
-          homeid="c17129ba-2946-45d1-9487-79855746c4ca"
-          description={
-            "Learn the basics of Javascript and learn how to use variables and functions."
-          }
-          title={"Intro to Javascript"}
-          alt={"Javascript Banner"}
-          bannerurl={"/javascript.jpg"}
-        />
+        {
+          courses.map((course) => (
+            <Course
+              homeid={course.homeid}
+              description={course.description}
+              title={course.title}
+              alt={course.alt}
+              bannerurl={course.bannerurl}
+              onclick={loadingScreenCallback}
+            />
+          ))
+        }
       </Wrap>
     </>
   ) : (

@@ -6,7 +6,8 @@ import { TbExternalLink } from "react-icons/tb";
 import Link from "next/link";
 import { Flex, Box, Text, Heading, Button } from "@chakra-ui/react";
 
-export default function Course({ homeid, bannerurl, alt, title, description }) {
+export default function Course({ homeid, bannerurl, alt, title, description, onclick }) {
+  console.log(onclick);
   return (
     <>
       <Box borderRadius={"20px"} backgroundColor={"brand.700"} maxW={"300px"}>
@@ -30,9 +31,15 @@ export default function Course({ homeid, bannerurl, alt, title, description }) {
             fontWeight={"100"}
             backgroundColor={"brand.600"}
           >
-            <Link href={homeid} rel="noreferrer" target={"_blank"}>
-              Begin Course
-            </Link>
+            {
+              (onclick) ?
+                <Link href={homeid} rel="noreferrer" target={"_blank"} onClick={onclick}>
+                  Begin Course
+                </Link> :
+                <Link href={homeid} rel="noreferrer" target={"_blank"}>
+                  Begin Course
+                </Link>
+            }
           </Button>
         </Flex>
       </Box>
